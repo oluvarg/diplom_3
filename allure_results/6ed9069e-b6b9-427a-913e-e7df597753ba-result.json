@@ -1,0 +1,1 @@
+{"name": "Проверка изменения счетчика ингредиента", "status": "skipped", "parameters": [{"name": "driver", "value": "'chrome'"}], "start": 1715523407702, "stop": 1715523407702, "uuid": "f48237d2-14cc-4e99-a84c-5b2528b4461f", "testCaseId": "0ec3ea3d0f99675a222304a39cd64e32", "fullName": "tests.test_main_page.TestMainPage#test_counter_add_ingredient"}

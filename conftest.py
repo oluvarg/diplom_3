@@ -14,7 +14,7 @@ def driver(request):
         driver.fullscreen_window()
     elif request.param == 'chrome':
         options = webdriver.ChromeOptions()
-        # options.add_argument('--headless')
+        options.add_argument('--headless')
         driver = webdriver.Chrome(options=options,
                                   service=ChromeService(ChromeDriverManager().install()))
         driver.maximize_window()

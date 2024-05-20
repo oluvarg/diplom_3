@@ -3,7 +3,6 @@ import allure
 from pages.base_page import BasePage
 from data import UrlsData
 from locators.main_page_locators import MainPageLocators as MPL
-from locators.order_feed_locators import OrderPageLocators as OPL
 
 
 class MainPage(BasePage):
@@ -23,10 +22,6 @@ class MainPage(BasePage):
     @allure.step('Нажатие на кнопку "Лента Заказов"')
     def click_button_order_feed(self):
         self.click_element_if_clickable(MPL.BUTTON_ORDER_FEED)
-
-    @allure.step('Проверка открытия страницы после нажатия на кнопку "Лента Заказов"')
-    def check_title_order_feed(self):
-        return self.check_exist_element(OPL.TITLE_ORDER_PAGE)
 
     @allure.step('Проверка открытия страницы после нажатия на кнопку "Конструктор"')
     def check_title_constructor(self):

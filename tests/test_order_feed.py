@@ -1,5 +1,6 @@
 import allure
 
+from pages.login_page import LoginPage
 from pages.main_page import MainPage
 from pages.order_feed_page import OrderFeedPage
 from pages.profile_page import ProfilePage
@@ -19,8 +20,9 @@ class TestOrderFeed:
         pp = ProfilePage(driver)
         ofp = OrderFeedPage(driver)
         mp = MainPage(driver)
+        lp = LoginPage(driver)
 
-        pp.authorization()
+        lp.authorization()
         mp.add_filling_to_order()
         mp.click_order_button()
         order_id = mp.get_order_id
@@ -38,8 +40,9 @@ class TestOrderFeed:
         pp = ProfilePage(driver)
         ofp = OrderFeedPage(driver)
         mp = MainPage(driver)
+        lp = LoginPage(driver)
 
-        pp.authorization()
+        lp.authorization()
         mp.click_button_order_feed()
         pre_count = ofp.get_total_count_today()
         mp.click_button_constructor()
@@ -55,8 +58,9 @@ class TestOrderFeed:
         pp = ProfilePage(driver)
         ofp = OrderFeedPage(driver)
         mp = MainPage(driver)
+        lp = LoginPage(driver)
 
-        pp.authorization()
+        lp.authorization()
         mp.add_filling_to_order()
         mp.click_order_button()
         order_id = mp.get_order_id

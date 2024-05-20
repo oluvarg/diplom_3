@@ -1,6 +1,8 @@
 import allure
 
+from pages.login_page import LoginPage
 from pages.main_page import MainPage
+from pages.order_feed_page import OrderFeedPage
 from pages.profile_page import ProfilePage
 
 
@@ -16,9 +18,10 @@ class TestMainPage:
     @allure.title('Открытие страницы "Лента заказов"')
     def test_open_order_feed(self, driver):
         mp = MainPage(driver)
+        ofp = OrderFeedPage(driver)
         mp.open_reg_page()
         mp.click_button_order_feed()
-        assert mp.check_title_order_feed() is True, 'Страница "Лента заказов" не открыта'
+        assert ofp.check_title_order_feed() is True, 'Страница "Лента заказов" не открыта'
 
     @allure.title('Открытие окна ингредиента')
     def test_open_window_ingredient(self, driver):
@@ -47,8 +50,9 @@ class TestMainPage:
     def test_placing_order(self, driver):
         pl = ProfilePage(driver)
         mp = MainPage(driver)
+        lp = LoginPage(driver)
 
-        pl.authorization()
+        lp.authorization()
         mp.add_filling_to_order()
         mp.click_order_button()
         assert mp.check_placing_order() == 'идентификатор заказа', 'Оформить заказ не удалось'

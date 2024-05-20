@@ -32,3 +32,7 @@ class OrderFeedPage(BasePage):
     def get_total_count_today(self):
         self.find_element_visibility(OPL.TOTAL_COUNT_TODAY)
         return self.get_text(OPL.TOTAL_COUNT_TODAY)
+
+    @allure.step('Проверка открытия страницы после нажатия на кнопку "Лента Заказов"')
+    def check_title_order_feed(self):
+        return self.check_exist_element(OPL.TITLE_ORDER_PAGE)
